@@ -1,0 +1,21 @@
+; StudentDLL.def
+;
+; Модуль экспорта для StudentDLL.dll.
+; Выбранный по ТЗ вариант: явное перечисление экспортов через .def файл
+; (без __declspec(dllexport)). Поскольку все функции StudentCore объявлены
+; как extern "C", их имена в объектном коде НЕ подвергаются мангловке
+; C++, поэтому здесь достаточно перечислить их как есть - и точно так же
+; строкой можно будет искать их через GetProcAddress("createGroup") и т.д.
+; в StudentApp.
+
+LIBRARY StudentDLL
+
+EXPORTS
+    createGroup
+    initDemoData
+    calculateAllAverages
+    findBestStudent
+    countDebtors
+    filterByAverage
+    sortByAverage
+    freeGroup
